@@ -1,0 +1,105 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+/* Menu */
+
+.menu {
+  background: #ffffff;
+  color: #f2f2f2;
+  min-height: 40px;
+}
+
+.menu ul.nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul.nav li:hover,
+.menu ul.nav li.active {
+  background: #1a77ff;
+}
+
+.menu ul.nav li {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  margin: 0;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.menu ul.nav li a {
+  color: #37474F;
+  margin: 0;
+  padding: 0;
+}
+
+.menu ul.nav li a:hover {
+  background: transparent;
+}
+
+/* Main */
+/* Form Button */
+
+.button  {
+  width:800px;
+  height:200px;
+  margin-top: 10px;
+  padding: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 100px;
+  color: #f2f2f2;
+  border-radius: 0px;
+  border: 1px solid #f2f2f2;
+  background-color: #428bca;
+ }
+
+/* End Form Button */
+
+/* Horizontal Form */
+
+.form-control{
+  height: 69px;
+  width: 1200px;
+}
+
+#hours{
+  width:200px;
+  height:70px;
+}
+
+#mins{
+  width:200px;
+  height:70px;
+}
+
+/* End Horizontal Form */
+
+.footer {
+  background: #fff;
+  padding: 40px 0;
+  color: #212121;
+}
+
+.footer ul {
+  float: right;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer ul li {
+  color: #212121;
+  display: inline;
+  margin: 0 40px 0 0;
+  float: right;
+}
+
+.footer p {
+  color: #212121;
+  float: left;
+}
+
+/* End Footer */
