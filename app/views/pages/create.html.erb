@@ -47,17 +47,11 @@
           <form class="form-inline">
             <div class="form-group select-group">
 
-            <%= debug @pages %>
-                <%= @pages %>
             <%= form_for @pages do |f| %>
-            <%= options_for_select(
-  [
-    ['Lisbon', 1, { 'data-size' => '2.8 million' }],
-    ['Madrid', 2, { 'data-size' => '3.2 million' }]
-  ], 2
-) %>
-            <%= f.label :hours, 'Hours' %>
+            <%= f.label :hours %>
             <%= f.select :hours, '1'..'24' %>
+            <%= f.label :minutes %>
+            <%= f.select :minutes, '0'..'59' %>
             <%= f.submit "Submit" %>
             <% end %>
              </div>
