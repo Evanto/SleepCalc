@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Hours:</strong>
+  <%= @u_time.hours %>
+</p>
+
+<p>
+  <strong>Mins:</strong>
+  <%= @u_time.mins %>
+</p>
+
+<%= link_to 'Edit', edit_u_time_path(@u_time) %> |
+<%= link_to 'Back', u_times_path %>

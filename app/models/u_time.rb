@@ -1,0 +1,2 @@
+class UTime < ApplicationRecord
+end

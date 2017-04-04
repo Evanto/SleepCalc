@@ -1,0 +1,13 @@
+<h1>Time You Go To Bed</h1>
+
+<%= form_for @time do |f| %>
+  <div class="field">
+    <%= f.label :hours %><br />
+    <%= f.collection_select :hours_list %>
+  </div>
+  <div class="field">
+    <%= f.label :minutes, "Minutes" %><br />
+    <%= f.collection_select :minutes_list %>
+  </div>
+  <div class="button"><%= f.submit %></div>
+  <% end %>
