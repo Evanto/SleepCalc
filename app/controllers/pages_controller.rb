@@ -14,5 +14,8 @@ class PagesController < ApplicationController
 
  end
 
+ def new
+   @pages = Page.new
+ end
 
 end
