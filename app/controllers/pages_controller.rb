@@ -21,7 +21,7 @@ class PagesController < ApplicationController
  end
 
  def new
-   @pages = Page.new(page_params)
+   @pages = Page.new
  end
 
  private
