@@ -44,41 +44,16 @@
       <section class="container">
        <div class="row text-center">
         <div class="col-md-12">
-
-            <%= form_for @page do |f| %>
-            <%= f.label :hours %>
-            <%= f.select :hours, options_for_select([['5 am'], ['6 am'], ['7 am'], ['8 am'],
-                ['9 am'], ['10 am'], ['11 am'], ['12 noon'], ['13 pm'], ['14 pm'], ['15 pm'],
-                ['16 pm'], ['17 pm'], ['18 pm'], ['19 pm'], ['20 pm'], ['21 pm'], ['22 pm'],
-                ['23 pm'], ['00 midnight'], ['1 am'], ['2 am'], ['3 am'], ['4 am']]) %>
-
-            <%= f.label :minutes %>
-            <%= f.select :minutes, options_for_select([['00'], ['05'], ['10'], ['15'], ['20'],
-                ['25'], ['30'], ['35'], ['40'], ['45'], ['50'], ['55']]) %>
-            <%= f.submit "Submit" %>
-            <% end %>
+           <%= form_for(Sleep.new) do |f| %>
+           <%= f.time_select :hours, {minute_step: 5, prompt: true, order: [:hour]} %>
+           <%= f.submit "Submit" %>
+           <% end %>
         </div>
      </div>
   </section>
 
-          <div class="row text-center">
-            <% @page = Page.last %>
-            <% t = (@page.hours.to_i * 60 + @page.minutes.to_i) - 450 %>
-            <% hour, t = t.divmod(60) %>
-            <%= "%02d:%02d" % [hour, t] %>
-          </div>
-
-
-
-  <div class="footer">
-    <div class="container">
-      <ul>
-        <li>About</li>
-        <li>Blog</li>
-        <li>Contact</li>
-      </ul>
-      <p>© 2017 SleepCalc</p>
-    </div>
-  </div>
-</body>
+  <div class="row text-center">
+<p> Последнее время упавшее в форму: <%= Sleep.last.hours %><br/></p>
+<p> Время юзера - 450 минут (7.5 часов): <%= a = Sleep.last.hours - 450.minutes %><br/>
+<p> Убираем ненужное, получаем финальное время в часах и минутах: <%= d = a.hour.to_s + ":" + a.min.to_s %><br/>
 </html>

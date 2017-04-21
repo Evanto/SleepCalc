@@ -23,7 +23,7 @@
       <div class="row">
         <div class="col-md-5">
            <h1>Hi, welcome to <span>SleepCalc.</span>.</h1>
-          <p>Calculate the most healthy time to fall asleep</p>
+          <p>What is the best time to <span>go to bed</span>, if I want to<span> get up</span> at:</p>
         </div>
       </div>
     </div>
@@ -37,36 +37,29 @@
       <section class="container">
       <div class="row text-center">
         <div class="col-md-12">
-          <h2>What is the best time to go to bed, if I want to get up at:</h2>
+          <h2>What is the best time to get up if I want to wake up at:</h2>
         </div>
       </section>
 
       <section class="container">
        <div class="row text-center">
         <div class="col-md-12">
+          <form class="form-inline">
+            <div class="form-group select-group">
 
-            <%= form_for @page do |f| %>
-            <%= f.label :hours %>
-            <%= f.select :hours, options_for_select([['5 am'], ['6 am'], ['7 am'], ['8 am'],
-                ['9 am'], ['10 am'], ['11 am'], ['12 noon'], ['13 pm'], ['14 pm'], ['15 pm'],
-                ['16 pm'], ['17 pm'], ['18 pm'], ['19 pm'], ['20 pm'], ['21 pm'], ['22 pm'],
-                ['23 pm'], ['00 midnight'], ['1 am'], ['2 am'], ['3 am'], ['4 am']]) %>
 
-            <%= f.label :minutes %>
-            <%= f.select :minutes, options_for_select([['00'], ['05'], ['10'], ['15'], ['20'],
-                ['25'], ['30'], ['35'], ['40'], ['45'], ['50'], ['55']]) %>
-            <%= f.submit "Submit" %>
-            <% end %>
-        </div>
-     </div>
+                <%= puts @pages %>
+             </div>
+      </form>
+    </div>
+  </div>
   </section>
 
-          <div class="row text-center">
-            <% @page = Page.last %>
-            <% t = (@page.hours.to_i * 60 + @page.minutes.to_i) - 450 %>
-            <% hour, t = t.divmod(60) %>
-            <%= "%02d:%02d" % [hour, t] %>
-          </div>
+        <section class="container">
+        <div class="row text-center">
+
+        </section>
+     </div>
 
 
 
