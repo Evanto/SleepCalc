@@ -1,2 +1,0 @@
-class UserInput < ApplicationRecord
-end
