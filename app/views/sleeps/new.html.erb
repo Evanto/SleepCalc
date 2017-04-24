@@ -45,7 +45,12 @@
        <div class="row text-center">
         <div class="col-md-12">
            <%= form_for(Sleep.new) do |f| %>
-           <%= f.time_select :hours, {minute_step: 5, prompt: true, order: [:hour]} %>
+           <% if @sleep.errors.any? %>
+           <% @sleep.errors.full_messages.each do |message| %>
+           <%= message %>
+           <% end %>
+<% end %>
+           <%= f.time_select :hours, {minute_step: 5, prompt: true, ignore_date: true, order: [:hour]} %>
            <%= f.submit "Submit" %>
            <% end %>
         </div>
@@ -53,7 +58,9 @@
   </section>
 
   <div class="row text-center">
-<p> Последнее время упавшее в форму: <%= Sleep.last.hours %><br/></p>
-<p> Время юзера - 450 минут (7.5 часов): <%= a = Sleep.last.hours - 450.minutes %><br/>
-<p> Убираем ненужное, получаем финальное время в часах и минутах: <%= d = a.hour.to_s + ":" + a.min.to_s %><br/>
+  <%=  Sleep.last.hours %>
+  <%#=  Sleep.last.hours.to_s %>
+<p> Последнее время упавшее в форму: <%#= Sleep.last.hours %><br/></p>
+<p> Время юзера - 450 минут (7.5 часов): <%#= a = Sleep.last.hours - 450.minutes %><br/>
+<p> Убираем ненужное, получаем финальное время в часах и минутах: <%#= d = a.hour.to_s + ":" + a.min.to_s %><br/>
 </html>

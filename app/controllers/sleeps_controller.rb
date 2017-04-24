@@ -14,7 +14,7 @@ class SleepsController < ApplicationController
    if @sleep.save!
      redirect_to sleeps_path
    else
-     render :new
+     render :new, notice: "Post was"
    end
  end
 
