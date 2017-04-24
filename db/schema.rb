@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170404155824) do
+ActiveRecord::Schema.define(version: 20170424080808) do
 
   create_table "UserTime", force: :cascade do |t|
     t.integer "hours"
@@ -34,6 +34,13 @@ ActiveRecord::Schema.define(version: 20170404155824) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "sleeps", force: :cascade do |t|
+    t.time     "hours"
+    t.time     "minutes"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "u_times", force: :cascade do |t|
     t.integer  "hours"
     t.integer  "mins"
@@ -44,6 +51,13 @@ ActiveRecord::Schema.define(version: 20170404155824) do
   create_table "user_inputs", force: :cascade do |t|
     t.integer  "hours"
     t.integer  "mins"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "wakes", force: :cascade do |t|
+    t.time     "hours"
+    t.time     "minutes"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
